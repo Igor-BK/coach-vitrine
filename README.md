@@ -16,7 +16,8 @@ Ou ouvrir directement `index.html` dans un navigateur.
 
 - **Textes, offres, tarifs, témoignages** : tout est dans `index.html`.
 - **Couleurs, polices, espacements** : variables CSS en haut de `styles.css` (`:root`).
-  L'accent unique est `--accent`. Le mode sombre est géré via `prefers-color-scheme`.
+  Palette « performance » : fond charcoal profond, texte clair, accent vert volt
+  (`--accent`). Thème sombre unique (mono-thème, esprit salle de sport).
 - **Images** : actuellement des placeholders `picsum.photos`. Remplacer les `src`
   des `<img>` par de vraies photos (hero, portrait, avatars des témoignages).
 - **Formulaire de contact** : `script.js` intercepte l'envoi et affiche un message

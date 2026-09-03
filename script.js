@@ -17,7 +17,8 @@ if (navToggle && navMenu) {
   });
 }
 
-// Révélation au scroll
+// Révélation au scroll (amélioration progressive : le contenu reste visible
+// sans JS ou en reduced-motion ; seul ce qui est hors écran est masqué).
 const revealEls = document.querySelectorAll('.reveal');
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -26,16 +27,22 @@ if (revealEls.length && !prefersReduced && 'IntersectionObserver' in window) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in');
+          entry.target.classList.add('reveal-in');
           io.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
   );
-  revealEls.forEach((el) => io.observe(el));
-} else {
-  revealEls.forEach((el) => el.classList.add('in'));
+
+  revealEls.forEach((el) => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 40) return; // déjà visible
+    el.classList.add('reveal-pre');
+    io.observe(el);
+  });
+
+  // Filet de sécurité : ne jamais laisser un bloc masqué indéfiniment.
+  setTimeout(() => revealEls.forEach((el) => el.classList.add('reveal-in')), 2500);
 }
 
 // Formulaire de contact (démo : pas d'envoi réel)

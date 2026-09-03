@@ -1,20 +1,23 @@
 /* =========================================================================
    Léo Marchetti - site vitrine coach sportif
-   Palette : off-white chaud + encre chaude + un seul accent vermillon.
-   Rayons  : boutons = pilule (999px), cartes = 14px, champs = 10px.
+   Palette « performance » : charcoal profond + vert volt électrique.
+   Thème sombre assumé (mono-thème, esprit salle de sport / haute intensité).
+   Rayons : boutons = pilule (999px), cartes = 14px, champs = 10px.
    ========================================================================= */
 
 :root {
-  --bg: #f7f5f1;
-  --surface: #ffffff;
-  --surface-2: #f0ece4;
-  --ink: #191510;
-  --ink-soft: #5c564c;
-  --line: #e3ddd1;
-  --accent: #c23b22;
-  --accent-hover: #a83019;
-  --accent-ink: #ffffff;
-  --focus: #1f6feb;
+  color-scheme: dark;
+
+  --bg: #0f1113;
+  --surface: #16191c;
+  --surface-2: #1f2327;
+  --ink: #f4f6f7;
+  --ink-soft: #a1a8af;
+  --line: #2a2f34;
+  --accent: #c8f43f;
+  --accent-hover: #d8ff5f;
+  --accent-ink: #10130a;
+  --focus: #c8f43f;
 
   --radius-card: 14px;
   --radius-field: 10px;
@@ -25,21 +28,6 @@
 
   --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
   --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #141210;
-    --surface: #1d1a16;
-    --surface-2: #242019;
-    --ink: #f4f0e8;
-    --ink-soft: #a8a094;
-    --line: #322d25;
-    --accent: #ff5c3d;
-    --accent-hover: #ff7357;
-    --accent-ink: #1a0d09;
-    --focus: #7cb0ff;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -321,12 +309,12 @@ p { margin: 0; }
 }
 .offre-feature {
   grid-row: 1 / span 2;
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
 }
 .offre-feature .price,
-.offre-feature h3 { color: var(--bg); }
+.offre-feature h3 { color: var(--accent-ink); }
 .offre-top { display: flex; flex-direction: column; gap: 0.4rem; }
 .price {
   font-family: var(--font-display);
@@ -335,8 +323,9 @@ p { margin: 0; }
   letter-spacing: -0.02em;
 }
 .price span { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); }
+.offre-feature .price span { color: color-mix(in srgb, var(--accent-ink) 68%, transparent); }
 .offre p { color: var(--ink-soft); }
-.offre-feature p { color: color-mix(in srgb, var(--bg) 78%, transparent); }
+.offre-feature p { color: color-mix(in srgb, var(--accent-ink) 78%, transparent); }
 .offre-list {
   margin: 0;
   padding: 0;
@@ -348,7 +337,7 @@ p { margin: 0; }
   position: relative;
   padding-left: 1.4rem;
   font-size: 0.95rem;
-  color: color-mix(in srgb, var(--bg) 82%, transparent);
+  color: color-mix(in srgb, var(--accent-ink) 82%, transparent);
 }
 .offre-list li::before {
   content: "";
@@ -358,9 +347,15 @@ p { margin: 0; }
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-ink);
 }
 .offre-feature .btn { margin-top: auto; align-self: flex-start; }
+.offre-feature .btn-primary {
+  --btn-bg: var(--accent-ink);
+  --btn-fg: var(--accent);
+}
+.offre-feature .btn-primary:hover { background: #000; }
+.offre-feature .btn-primary:focus-visible { outline-color: var(--accent-ink); }
 
 /* ---------- Résultats ---------- */
 .resultats { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); }
@@ -436,8 +431,9 @@ p { margin: 0; }
   transition: border-color 0.15s ease;
 }
 .field input:focus,
-.field textarea:focus { border-color: var(--ink); outline-offset: 1px; }
+.field textarea:focus { border-color: var(--accent); outline-offset: 1px; }
 .field textarea { resize: vertical; }
+.contact-form[hidden] { display: none; }
 .contact-form .btn { justify-self: start; margin-top: 0.4rem; }
 .form-note { font-size: 0.85rem; color: var(--ink-soft); }
 .form-success {
@@ -447,6 +443,7 @@ p { margin: 0; }
   border-radius: var(--radius-field);
   background: var(--surface-2);
   border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
   font-weight: 500;
 }
 
@@ -468,15 +465,16 @@ p { margin: 0; }
 .footer-nav a:hover { color: var(--ink); }
 .footer-legal { margin-left: auto; color: var(--ink-soft); font-size: 0.88rem; }
 
-/* ---------- Révélation au scroll ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.in { opacity: 1; transform: none; }
+/* ---------- Révélation au scroll (masquage posé par JS seulement) ---------- */
+.reveal-pre {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pre { opacity: 1; transform: none; transition: none; }
 }
 
 /* ---------- Responsive ---------- */
