@@ -3,179 +3,401 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0f1113">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#efe9dd">
   <title>Léo Marchetti · Coach sportif à Lyon</title>
-  <meta name="description" content="Coach sportif diplômé à Lyon et en visio. Perte de poids, prise de force et remise en forme avec un suivi hebdomadaire sur mesure.">
+  <meta name="description" content="Coach sportif diplômé à Lyon et en visio. Programmes d'entraînement sur mesure : prise de force, perte de poids, remise en forme et préparation course, avec un suivi hebdomadaire.">
   <meta property="og:title" content="Léo Marchetti · Coach sportif à Lyon">
-  <meta property="og:description" content="Un accompagnement sur mesure pour perdre du poids, gagner en force et tenir vos objectifs dans la durée.">
+  <meta property="og:description" content="Programmes d'entraînement et prestations de coaching sur mesure pour perdre du poids, gagner en force et tenir vos objectifs dans la durée.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&h=630&q=80">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="container header-inner">
       <a class="brand" href="#top">
         Léo Marchetti
-        <span>Coach sportif</span>
+        <span>Coach sportif diplômé · Lyon</span>
       </a>
 
       <nav class="site-nav" aria-label="Navigation principale">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
         <ul id="nav-menu" class="nav-menu">
           <li><a href="#methode">Méthode</a></li>
-          <li><a href="#offres">Offres</a></li>
+          <li><a href="#programmes">Programmes</a></li>
+          <li><a href="#prestations">Prestations</a></li>
           <li><a href="#resultats">Résultats</a></li>
           <li><a href="#apropos">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <a class="btn btn-primary btn-sm header-cta" href="#contact">Réserver un appel découverte</a>
+      <a class="btn btn-primary btn-sm header-cta" href="#contact">
+        Appel découverte
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </header>
 
   <main id="main">
     <span id="top"></span>
 
-    <!-- HERO : split asymétrique, visuel à droite -->
-    <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow">Coaching à Lyon et en visio</p>
-        <h1>Reprenez le contrôle de votre forme physique.</h1>
-        <p class="lead">Un accompagnement sur mesure pour perdre du poids, gagner en force et tenir vos objectifs dans la durée.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Réserver un appel découverte</a>
-          <a class="btn btn-ghost" href="#methode">Découvrir la méthode</a>
+    <!-- HERO : bannière plein cadre -->
+    <section class="hero" aria-label="Présentation">
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=2000&h=1200&q=80" alt="Séance de coaching sportif collectif en salle" width="2000" height="1200" fetchpriority="high">
+        <div class="hero-scrim"></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow-light">Coaching à Lyon &amp; en visio</p>
+          <h1 class="hero-title">
+            <span class="line">Reprenez le contrôle</span>
+            <span class="line">de votre forme physique.</span>
+          </h1>
+          <p class="lead">Des programmes d'entraînement sur mesure et un suivi hebdomadaire pour perdre du poids, gagner en force et tenir vos objectifs dans la durée.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">
+              Réserver un appel découverte
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost btn-ghost-light" href="#programmes">Voir les programmes</a>
+          </div>
         </div>
       </div>
-      <div class="hero-media">
-        <img src="https://picsum.photos/seed/leo-coaching-seance/1100/1320" alt="Séance de coaching sportif" width="1100" height="1320" fetchpriority="high">
-      </div>
+      <a class="hero-cue" href="#chiffres" aria-label="Défiler vers la suite">
+        <span></span>
+      </a>
     </section>
 
-    <!-- BANDEAU crédibilité -->
-    <section class="cred container" aria-label="Repères">
-      <div class="cred-item">
-        <strong>8 ans</strong>
-        <span>à accompagner des sportifs et des grands débutants</span>
+    <!-- BANDEAU crédibilité + compteurs -->
+    <section id="chiffres" class="cred container" aria-label="Repères">
+      <div class="cred-item reveal">
+        <strong><span data-count="8">8</span> ans</strong>
+        <span>à accompagner sportifs confirmés et grands débutants</span>
       </div>
-      <div class="cred-item">
-        <strong>+130</strong>
+      <div class="cred-item reveal">
+        <strong>+<span data-count="130">130</span></strong>
         <span>personnes suivies depuis 2018</span>
       </div>
-      <div class="cred-item">
+      <div class="cred-item reveal">
+        <strong><span data-count="94">94</span> %</strong>
+        <span>tiennent leur objectif à 3 mois</span>
+      </div>
+      <div class="cred-item reveal">
         <strong>BPJEPS</strong>
         <span>mention haltérophilie, musculation</span>
       </div>
     </section>
 
-    <!-- MÉTHODE : pile numérotée -->
-    <section id="methode" class="methode container reveal">
-      <div class="section-head">
-        <h2>Une méthode simple, tenue sur la durée</h2>
-        <p>Pas de programme miracle. Un cadre clair, ajusté à votre quotidien et revu à chaque étape.</p>
+    <!-- MARQUEE disciplines -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Musculation</span><span aria-hidden="true">·</span>
+        <span>Haltérophilie</span><span aria-hidden="true">·</span>
+        <span>HIIT &amp; cardio</span><span aria-hidden="true">·</span>
+        <span>Perte de poids</span><span aria-hidden="true">·</span>
+        <span>Mobilité</span><span aria-hidden="true">·</span>
+        <span>Préparation course</span><span aria-hidden="true">·</span>
+        <span>Remise en forme</span><span aria-hidden="true">·</span>
+        <span>Nutrition</span><span aria-hidden="true">·</span>
+        <span>Musculation</span><span aria-hidden="true">·</span>
+        <span>Haltérophilie</span><span aria-hidden="true">·</span>
+        <span>HIIT &amp; cardio</span><span aria-hidden="true">·</span>
+        <span>Perte de poids</span><span aria-hidden="true">·</span>
+        <span>Mobilité</span><span aria-hidden="true">·</span>
+        <span>Préparation course</span><span aria-hidden="true">·</span>
+        <span>Remise en forme</span><span aria-hidden="true">·</span>
+        <span>Nutrition</span><span aria-hidden="true">·</span>
+      </div>
+    </div>
+
+    <!-- MÉTHODE -->
+    <section id="methode" class="methode container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Méthode</p>
+        <h2>Un cadre simple, tenu sur la durée</h2>
+        <p>Pas de programme miracle. Une structure claire, ajustée à votre quotidien et revue à chaque étape.</p>
       </div>
       <ol class="steps">
-        <li>
+        <li class="reveal">
           <div class="step-body">
             <h3>Bilan complet</h3>
-            <p>On fait le point sur vos antécédents, votre niveau, vos contraintes de temps et l'objectif que vous visez vraiment.</p>
+            <p>On fait le point sur vos antécédents, votre niveau, vos contraintes de temps et l'objectif que vous visez vraiment. Tests de force, de mobilité et prise de mesures.</p>
           </div>
         </li>
-        <li>
+        <li class="reveal">
           <div class="step-body">
             <h3>Programme sur mesure</h3>
-            <p>Vous recevez un plan d'entraînement et des repères nutritionnels adaptés à votre matériel et à votre emploi du temps.</p>
+            <p>Vous recevez un plan d'entraînement structuré et des repères nutritionnels adaptés à votre matériel, votre emploi du temps et votre récupération.</p>
           </div>
         </li>
-        <li>
+        <li class="reveal">
           <div class="step-body">
             <h3>Suivi hebdomadaire</h3>
-            <p>Chaque semaine, on ajuste les charges, on lève les blocages et on garde le cap ensemble.</p>
+            <p>Chaque semaine, on ajuste les charges, on corrige la technique en vidéo, on lève les blocages et on garde le cap ensemble.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="step-body">
+            <h3>Bilan &amp; progression</h3>
+            <p>Tous les mois, on mesure les progrès chiffrés, on refait les tests et on fixe le cap du bloc suivant. Vous savez toujours où vous en êtes.</p>
           </div>
         </li>
       </ol>
     </section>
 
-    <!-- OFFRES : grille bento 1 + 2 -->
-    <section id="offres" class="offres container reveal">
-      <div class="section-head">
-        <p class="eyebrow">Offres</p>
-        <h2>Trois formules, un seul objectif</h2>
+    <!-- PROGRAMMES D'ENTRAÎNEMENT -->
+    <section id="programmes" class="programmes container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Programmes d'entraînement</p>
+        <h2>Quatre programmes, un objectif à la fois</h2>
+        <p>Chaque programme est un point de départ : le contenu, le volume et la fréquence sont ajustés à votre bilan puis revus semaine après semaine.</p>
       </div>
-      <div class="offres-grid">
-        <article class="offre offre-feature">
-          <div class="offre-top">
-            <h3>Coaching individuel</h3>
-            <p class="price">à partir de 65 € <span>/ séance</span></p>
+
+      <div class="prog-grid">
+        <article class="prog reveal">
+          <div class="prog-media">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&h=640&q=80" alt="Entraînement de force à la barre" width="900" height="640" loading="lazy">
+            <span class="prog-tag">Force &amp; muscle</span>
           </div>
-          <p>Séances en face à face à Lyon 3e, programmation complète et suivi entre les séances. Le format le plus complet pour repartir sur de bonnes bases.</p>
-          <ul class="offre-list">
-            <li>2 séances par semaine recommandées</li>
-            <li>Programme et repères nutrition inclus</li>
-            <li>Bilan de forme chaque mois</li>
-          </ul>
-          <a class="btn btn-primary" href="#contact">Réserver un appel découverte</a>
+          <div class="prog-body">
+            <h3>Prise de force &amp; de masse</h3>
+            <p>Construire du muscle et progresser sur les mouvements de base sans y passer ses soirées.</p>
+            <dl class="prog-meta">
+              <div><dt>Durée</dt><dd>12 semaines</dd></div>
+              <div><dt>Fréquence</dt><dd>3 à 4 séances / sem.</dd></div>
+              <div><dt>Niveau</dt><dd>Intermédiaire</dd></div>
+            </dl>
+            <ul class="prog-list">
+              <li>Split haut / bas ou push-pull-legs selon votre disponibilité</li>
+              <li>Progression chiffrée sur squat, soulevé de terre, développés</li>
+              <li>Travail d'accessoires ciblé et gainage</li>
+              <li>Repères nutrition pour une prise de masse propre</li>
+            </ul>
+          </div>
         </article>
 
-        <article class="offre">
-          <h3>Petit groupe</h3>
-          <p class="price">35 € <span>/ séance</span></p>
-          <p>Quatre personnes maximum. L'énergie du collectif avec un vrai suivi individuel pendant l'effort.</p>
+        <article class="prog reveal">
+          <div class="prog-media">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&h=640&q=80" alt="Séance de renforcement avec kettlebell" width="900" height="640" loading="lazy">
+            <span class="prog-tag">Perte de poids</span>
+          </div>
+          <div class="prog-body">
+            <h3>Perte de poids &amp; recomposition</h3>
+            <p>Perdre de la masse grasse tout en gardant du muscle et de l'énergie au quotidien.</p>
+            <dl class="prog-meta">
+              <div><dt>Durée</dt><dd>10 semaines</dd></div>
+              <div><dt>Fréquence</dt><dd>3 séances / sem. + marche</dd></div>
+              <div><dt>Niveau</dt><dd>Tous niveaux</dd></div>
+            </dl>
+            <ul class="prog-list">
+              <li>Full-body en circuit + finisher cardio court</li>
+              <li>Objectif de pas quotidien et suivi hebdo du poids</li>
+              <li>Déficit calorique accompagné, sans aliment interdit</li>
+              <li>Ajustements selon la fatigue et la faim réelle</li>
+            </ul>
+          </div>
         </article>
 
-        <article class="offre">
-          <h3>Coaching en ligne</h3>
-          <p class="price">90 € <span>/ mois</span></p>
-          <p>Programme mis à jour chaque semaine, corrections en vidéo et point téléphonique tous les quinze jours.</p>
+        <article class="prog reveal">
+          <div class="prog-media">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&h=640&q=80" alt="Échauffement et mobilité avant l'entraînement" width="900" height="640" loading="lazy">
+            <span class="prog-tag">Débutant</span>
+          </div>
+          <div class="prog-body">
+            <h3>Remise en forme · grand débutant</h3>
+            <p>Reprendre en douceur, apprendre les bons gestes et créer une vraie habitude.</p>
+            <dl class="prog-meta">
+              <div><dt>Durée</dt><dd>8 semaines</dd></div>
+              <div><dt>Fréquence</dt><dd>2 séances / sem.</dd></div>
+              <div><dt>Niveau</dt><dd>Débutant</dd></div>
+            </dl>
+            <ul class="prog-list">
+              <li>Apprentissage des mouvements fondamentaux au poids du corps</li>
+              <li>Montée progressive du volume, zéro courbature qui dégoûte</li>
+              <li>Routine mobilité pour le dos, les hanches et les épaules</li>
+              <li>Séances courtes (35–45 min) compatibles avec une vie chargée</li>
+            </ul>
+          </div>
         </article>
+
+        <article class="prog reveal">
+          <div class="prog-media">
+            <img src="https://images.unsplash.com/photo-1502904550040-7534597429ae?auto=format&fit=crop&w=900&h=640&q=80" alt="Sortie course à pied en préparation" width="900" height="640" loading="lazy">
+            <span class="prog-tag">Course</span>
+          </div>
+          <div class="prog-body">
+            <h3>Préparation course · 5 à 21 km</h3>
+            <p>Passer la ligne d'arrivée de votre premier 10 km ou semi sans se blesser.</p>
+            <dl class="prog-meta">
+              <div><dt>Durée</dt><dd>12 semaines</dd></div>
+              <div><dt>Fréquence</dt><dd>3 sorties + 1 renfo</dd></div>
+              <div><dt>Niveau</dt><dd>Débutant à confirmé</dd></div>
+            </dl>
+            <ul class="prog-list">
+              <li>Plan course progressif : endurance, seuil, fractionné</li>
+              <li>Séance de renforcement spécifique membres inférieurs</li>
+              <li>Gestion de l'allure et stratégie de course le jour J</li>
+              <li>Prévention des blessures et protocole de récupération</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <p class="prog-note reveal">Un objectif différent (sport de combat, montagne, retour de blessure, prépa physique d'un sport co) ? <a href="#contact">On en parle</a> — je construis le plan autour de votre échéance.</p>
+    </section>
+
+    <!-- BANDEAU CTA image -->
+    <section class="cta-band reveal" aria-label="Prendre rendez-vous">
+      <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=2000&h=900&q=80" alt="" width="2000" height="900" loading="lazy">
+      <div class="cta-band-scrim"></div>
+      <div class="container cta-band-inner">
+        <h2>Le meilleur moment pour commencer, c'était il y a un an. Le deuxième, c'est maintenant.</h2>
+        <a class="btn btn-primary" href="#contact">
+          Réserver un appel découverte
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
 
-    <!-- RÉSULTATS : titre collant + liste de citations -->
-    <section id="resultats" class="resultats container reveal">
-      <div class="resultats-head">
+    <!-- PRESTATIONS SPORTIVES -->
+    <section id="prestations" class="prestations container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Prestations sportives</p>
+        <h2>Le format qui colle à votre vie</h2>
+        <p>Toutes les formules incluent le bilan initial, la programmation sur mesure et l'accès à l'application de suivi. Tarifs dégressifs en pack, sans engagement de durée.</p>
+      </div>
+
+      <div class="presta-grid">
+        <article class="presta presta-feature reveal">
+          <div class="presta-feature-main">
+            <div class="presta-head">
+              <p class="presta-flag">Le plus complet</p>
+              <h3>Coaching individuel</h3>
+              <p class="price">65 € <span>/ séance · pack de 10 : 55 € la séance</span></p>
+            </div>
+            <p class="presta-lead">Séances en face à face au studio (Lyon 3e), encadrement technique et suivi entre les séances. Le format pour repartir sur de bonnes bases.</p>
+            <a class="btn btn-primary" href="#contact">
+              Réserver un appel découverte
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <ul class="presta-list">
+            <li>Séance de 60 min, 1 à 3 fois par semaine</li>
+            <li>Programmation périodisée + repères nutrition</li>
+            <li>Correction technique en direct et en vidéo</li>
+            <li>Bilan de forme et prise de mesures chaque mois</li>
+            <li>Messagerie directe 6 j/7 pour les ajustements</li>
+          </ul>
+        </article>
+
+        <article class="presta reveal">
+          <div class="presta-head">
+            <h3>Coaching duo &amp; petit groupe</h3>
+            <p class="price">35 € <span>/ séance / personne</span></p>
+          </div>
+          <p>Quatre personnes maximum. L'énergie du collectif avec un vrai suivi individuel pendant l'effort. Idéal entre amis, en couple ou entre collègues.</p>
+          <ul class="presta-list">
+            <li>Créneaux fixes le midi et en soirée</li>
+            <li>Programme commun adapté à chaque niveau</li>
+            <li>Matériel fourni au studio</li>
+          </ul>
+        </article>
+
+        <article class="presta reveal">
+          <div class="presta-head">
+            <h3>Coaching en ligne</h3>
+            <p class="price">90 € <span>/ mois</span></p>
+          </div>
+          <p>Le suivi à distance pour les autonomes ou hors de Lyon. Vous vous entraînez où vous voulez, je garde le cap avec vous.</p>
+          <ul class="presta-list">
+            <li>Programme mis à jour chaque semaine sur l'appli</li>
+            <li>Retour vidéo sur vos mouvements sous 24 h</li>
+            <li>Point visio de 30 min tous les 15 jours</li>
+          </ul>
+        </article>
+
+        <article class="presta reveal">
+          <div class="presta-head">
+            <h3>Bilan &amp; programme seul</h3>
+            <p class="price">120 € <span>· prestation unique</span></p>
+          </div>
+          <p>Un point de départ clé en main : bilan complet, plan d'entraînement sur 8 semaines et une séance de prise en main.</p>
+          <ul class="presta-list">
+            <li>Entretien objectif + tests physiques (1 h)</li>
+            <li>Programme détaillé livré en PDF et sur l'appli</li>
+            <li>Une séance de coaching pour valider la technique</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="presta-note reveal">Séances possibles en extérieur (parc de la Tête d'Or) aux beaux jours. Facturation à la séance ou au pack, paiement en plusieurs fois pour les packs de 10.</p>
+    </section>
+
+    <!-- RÉSULTATS -->
+    <section id="resultats" class="resultats container">
+      <div class="resultats-head reveal">
         <p class="eyebrow">Résultats</p>
         <h2>Ce qu'en disent les personnes accompagnées</h2>
+        <ul class="result-metrics">
+          <li><strong>-11 kg</strong><span>en 8 mois</span></li>
+          <li><strong>+40 kg</strong><span>au soulevé de terre</span></li>
+          <li><strong>1<sup>er</sup> semi</strong><span>terminé en 1 h 58</span></li>
+        </ul>
       </div>
       <ul class="quotes">
-        <li>
+        <li class="reveal">
           <blockquote>« J'ai perdu 11 kilos en huit mois sans jamais me sentir au régime. Tout est calé sur ma vie de parent. »</blockquote>
-          <p class="who"><img src="https://picsum.photos/seed/camille-f/96/96" alt="" width="48" height="48"> Camille Fauvel <span>Lyon, suivi individuel</span></p>
+          <p class="who"><img src="https://i.pravatar.cc/96?img=45" alt="" width="48" height="48"> Camille Fauvel <span>Lyon, coaching individuel</span></p>
         </li>
-        <li>
+        <li class="reveal">
           <blockquote>« Objectif premier semi-marathon atteint. Le plan était exigeant mais toujours réaliste, semaine après semaine. »</blockquote>
-          <p class="who"><img src="https://picsum.photos/seed/yanis-b/96/96" alt="" width="48" height="48"> Yanis Berthier <span>Villeurbanne, coaching en ligne</span></p>
+          <p class="who"><img src="https://i.pravatar.cc/96?img=13" alt="" width="48" height="48"> Yanis Berthier <span>Villeurbanne, coaching en ligne</span></p>
         </li>
-        <li>
+        <li class="reveal">
           <blockquote>« Je remets enfin les pieds dans une salle sans appréhension. Les séances en petit groupe m'ont débloquée. »</blockquote>
-          <p class="who"><img src="https://picsum.photos/seed/sabrina-l/96/96" alt="" width="48" height="48"> Sabrina Lemoine <span>Lyon 7e, petit groupe</span></p>
+          <p class="who"><img src="https://i.pravatar.cc/96?img=32" alt="" width="48" height="48"> Sabrina Lemoine <span>Lyon 7e, petit groupe</span></p>
         </li>
       </ul>
     </section>
 
-    <!-- À PROPOS : split visuel à gauche -->
-    <section id="apropos" class="apropos container reveal">
-      <div class="apropos-media">
-        <img src="https://picsum.photos/seed/leo-marchetti-portrait/900/1100" alt="Portrait de Léo Marchetti" width="900" height="1100">
+    <!-- À PROPOS -->
+    <section id="apropos" class="apropos container">
+      <div class="apropos-media reveal">
+        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&h=1100&q=80" alt="Portrait de Léo Marchetti, coach sportif" width="900" height="1100" loading="lazy">
+        <div class="apropos-badge">
+          <strong>Léo Marchetti</strong>
+          <span>BPJEPS · 8 ans d'expérience</span>
+        </div>
       </div>
-      <div class="apropos-copy">
+      <div class="apropos-copy reveal">
+        <p class="eyebrow">À propos</p>
         <h2>Bonjour, moi c'est Léo</h2>
         <p>Ancien handballeur en régional, j'ai passé mon diplôme après une blessure qui m'a beaucoup appris sur la patience et la progression.</p>
         <p>Depuis 2018, j'accompagne des personnes qui n'ont pas forcément un passé sportif : reprise après une grossesse, préparation d'une course, envie de se sentir mieux au quotidien. Mon travail, c'est de rendre l'entraînement compatible avec votre vie, pas l'inverse.</p>
+        <ul class="apropos-points">
+          <li>Studio privé à Lyon 3e, sans attente ni regard des autres</li>
+          <li>Programmes suivis sur application, historique consultable à tout moment</li>
+          <li>Approche progressive, respectueuse des blessures et de la récupération</li>
+        </ul>
         <p class="apropos-sign">À très vite en séance.</p>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact container reveal">
-      <div class="contact-copy">
+    <section id="contact" class="contact container">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Contact</p>
         <h2>Prêt à commencer ?</h2>
         <p>Réservez un appel découverte de 20 minutes. On parle de votre objectif et je vous dis franchement comment je peux aider.</p>
         <p class="contact-direct">
@@ -183,9 +405,10 @@
           <span aria-hidden="true">·</span>
           <a href="mailto:bonjour@leomarchetti.fr">bonjour@leomarchetti.fr</a>
         </p>
+        <p class="contact-place">Studio · 12 rue de la Forme, 69003 Lyon<br>Séances en présentiel et à distance</p>
       </div>
 
-      <form class="contact-form" novalidate>
+      <form class="contact-form reveal" novalidate>
         <div class="field">
           <label for="c-name">Nom</label>
           <input id="c-name" name="name" type="text" autocomplete="name" required>
@@ -199,10 +422,24 @@
           <input id="c-phone" name="phone" type="tel" autocomplete="tel">
         </div>
         <div class="field">
-          <label for="c-goal">Votre objectif</label>
-          <textarea id="c-goal" name="goal" rows="4" required></textarea>
+          <label for="c-goal">Programme visé</label>
+          <select id="c-goal" name="goal">
+            <option value="">Je ne sais pas encore</option>
+            <option>Prise de force &amp; de masse</option>
+            <option>Perte de poids &amp; recomposition</option>
+            <option>Remise en forme · débutant</option>
+            <option>Préparation course</option>
+            <option>Autre objectif</option>
+          </select>
         </div>
-        <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+        <div class="field">
+          <label for="c-msg">Votre message</label>
+          <textarea id="c-msg" name="message" rows="4" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">
+          Envoyer ma demande
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
         <p class="form-note">Réponse sous 48 h. Vos coordonnées ne sont utilisées que pour vous recontacter.</p>
       </form>
 
@@ -212,17 +449,21 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-brand">Léo Marchetti, coach sportif diplômé</p>
+      <div class="footer-brand-block">
+        <p class="footer-brand">Léo Marchetti</p>
+        <p class="footer-tag">Coach sportif diplômé · Lyon &amp; visio</p>
+      </div>
       <nav class="footer-nav" aria-label="Liens de pied de page">
         <a href="#methode">Méthode</a>
-        <a href="#offres">Offres</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#prestations">Prestations</a>
         <a href="#contact">Contact</a>
         <a href="#" rel="nofollow">Mentions légales</a>
       </nav>
-      <p class="footer-legal">Lyon · Séances en studio et à distance · © 2026</p>
+      <p class="footer-legal">Séances en studio et à distance · © 2026</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
